@@ -141,6 +141,10 @@ public class GameSetUp implements Runnable {
     private void tick(){
         //checks for key types and manages them
         keyManager.tick();
+        if(keyManager.debugkey){
+        	DEBUGMODE = !DEBUGMODE;
+        	keyManager.debugkey =false;
+        }
 
         //game states are the menus
         if(State.getState() != null) {

@@ -17,6 +17,8 @@ import Resources.Images;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
+import com.sun.net.ssl.KeyManager;
+
 public class Player extends BaseDynamicEntity implements Fighter {
 
 	private Rectangle player;
@@ -84,6 +86,10 @@ public class Player extends BaseDynamicEntity implements Fighter {
 				checkInWorld = true;
 			} else {
 				checkInWorld = false;
+			}
+			if(handler.getKeyManager().regenplayer) {
+				this.setMana(this.getMaxMana());
+				this.setHealth(this.getMaxHealth());
 			}
 
 		}
