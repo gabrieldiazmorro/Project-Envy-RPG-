@@ -141,7 +141,7 @@ public class GameSetUp implements Runnable {
     private void tick(){
         //checks for key types and manages them
         keyManager.tick();
-        if(keyManager.debugkey){
+        if(keyManager.debugkey){     //activates debug mode
         	DEBUGMODE = !DEBUGMODE;
         	keyManager.debugkey =false;
         }

@@ -114,6 +114,11 @@ public class FightState extends InWorldState{
 
     @Override
     public void tick() {
+    	if(handler.getKeyManager().regenplayer) {
+    		handler.getEntityManager().getPlayer().setMana(handler.getEntityManager().getPlayer().getMaxMana());
+    		handler.getEntityManager().getPlayer().setHealth(handler.getEntityManager().getPlayer().getMaxHealth());
+			handler.getKeyManager().regenplayer =false;
+		}
         if(turn>numOfEnemies){
             turn=0;
         }
@@ -498,7 +503,7 @@ public class FightState extends InWorldState{
         uiManager.addObjects(new UIImageButton(handler.getWidth() * 38/60 - 128/2, 5*handler.getHeight()/6, 128, 64, Images.Skill, new ClickListlener() {
             @Override
             public void onClick() {
-                if(handler.getEntityManager().getPlayer().getMana()>=25) {
+                if(handler.getEntityManager().getPlayer().getMana()>=25 && handler.getEntityManager().getPlayer().getSkill() != "none") {
                     System.out.println("Skill");
                     skill = true;
                 }
