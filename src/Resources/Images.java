@@ -92,6 +92,9 @@ public class Images {
 	public static Image ScaledCave;
 	public static Image ScaledArea;
 	public static BufferedImage tree;
+	
+	//Our added Images
+	public static BufferedImage Demonetized;
 
 	public Images() {
 
@@ -102,7 +105,6 @@ public class Images {
 		Options = new BufferedImage[3];
 		Resume = new BufferedImage[2];
 		Quit = new BufferedImage[2];
-		
 		map = new BufferedImage[4];
 		Scaledmap = new Image[3];
 
@@ -168,6 +170,9 @@ public class Images {
 			Stats = ImageIO.read(getClass().getResourceAsStream("/Sheets/Cartel Nota.png"));
 			QST = ImageIO.read(getClass().getResourceAsStream("/Sheets/QST.png")); //Things sometimes just dont fit
 
+			// Our added Images
+			Demonetized = ImageIO.read(getClass().getResourceAsStream("/Sheets/demonetized.png")); // cave entrance static entity
+			
 			Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
 			Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeButton3.png"));
 			Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeButton1.png"));

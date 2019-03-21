@@ -1,6 +1,7 @@
 package Game.World;
 
 import Game.Entities.EntityManager;
+import Game.Entities.Statics.CuckBlock;
 import Game.Entities.Statics.SmokeHouse;
 import Game.Entities.Statics.Tree;
 import Input.MouseManager.Circle;
@@ -40,7 +41,7 @@ public class WorldManager {
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Jovan","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,1400, 600,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2400, -200,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
-		
+		this.entityManager.AddEntity(new CuckBlock(handler, 1660, 60));
 		this.entityManager.AddEntity(circle);
 
 		AddWalls();
@@ -134,6 +135,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 1960, -150, 120, 100, "Wall"));
 
 		worldWalls.add(new Walls(handler, 1662, 55, 50, 50, "Door Cave"));
+		worldWalls.add(new Walls(handler, 1655, 70, 65, 65, "Wall"));       // Cave TBlock
 		worldWalls.add(new Walls(handler, (int) circle.getXOffset(),(int) 
 				circle.getYOffset(), 20, 20, "Door S"));	
 
