@@ -62,12 +62,12 @@ public class WorldManager {
 	public void render(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		if(!this.handler.getEntityManager().getPlayer().getWeaken()) {
-		g2.drawImage(this.animation.getCurrentFrame(),
-		3027 + handler.getXDisplacement(), 3875 + 
-		handler.getYDisplacement(), 30, 30, null);}
+			g2.drawImage(this.animation.getCurrentFrame(),
+					3027 + handler.getXDisplacement(), 3875 + 
+					handler.getYDisplacement(), 30, 30, null);}
 		rectangle = new Rectangle( 3027 + 
-		handler.getXDisplacement(), 3875 + 
-		handler.getYDisplacement(), 30, 30);
+				handler.getXDisplacement(), 3875 + 
+				handler.getYDisplacement(), 30, 30);
 		g2.setColor(Color.ORANGE);
 		g2.setFont(new Font("AR ESSENCE", Font.PLAIN, 100));
 		g2.drawString(this.getString(), this.xPos,this.yPos);
@@ -95,7 +95,7 @@ public class WorldManager {
 		//Bridge Walls
 		worldWalls.add(new Walls(handler, 150, 120, 210, 360, "Wall"));
 		worldWalls.add(new Walls(handler, 150, 600, 210, 495, "Wall"));
-		worldWalls.add(new Walls(handler, 0, 450, 150, 200, "Wall"));
+		//		worldWalls.add(new Walls(handler, 0, 450, 150, 200, "Wall"));
 
 		//Walls of the Island
 		///Left Bottom Border of the Island
@@ -135,7 +135,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 1960, -150, 120, 100, "Wall"));
 
 		worldWalls.add(new Walls(handler, 1662, 55, 50, 50, "Door Cave"));
-		worldWalls.add(new Walls(handler, 1655, 70, 65, 65, "Wall"));       // Cave TBlock
+		worldWalls.add(new Walls(handler, 1655, 70, 65, 65, "Wall"));       // Cave Door Entity
 		worldWalls.add(new Walls(handler, (int) circle.getXOffset(),(int) 
 				circle.getYOffset(), 20, 20, "Door S"));	
 
@@ -144,14 +144,63 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 620, 210, 80, 160, "Wall"));
 		worldWalls.add(new Walls(handler, 840, 240, 120, 110, "Wall"));
 		worldWalls.add(new Walls(handler, 580, 300, 40, 50, "Wall"));
+
+		
+		// Walls of 2nd Island
+		//Bride Walls
+		worldWalls.add(new Walls(handler, 675, 2300, 250, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 675, 2430, 250, 10, "Wall"));
+//		worldWalls.add(new Walls(handler, 925, 2300, 10, 130, "Wall"));
+
+		//Top Right Side
+		worldWalls.add(new Walls(handler, 160, 1725, 200, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 375, 1725, 10, 375, "Wall"));
+		worldWalls.add(new Walls(handler, 375, 2100, 300, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 675, 2100, 10, 210, "Wall"));
+
+		//Top Side
+		worldWalls.add(new Walls(handler, -150, 1475, 10, 260, "Wall"));
+		worldWalls.add(new Walls(handler, -150, 1475, 215, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 65, 1475, 10, 150, "Wall"));
+
+		//Top Left Side
+		worldWalls.add(new Walls(handler, -450, 1725, 10, 650, "Wall"));
+		worldWalls.add(new Walls(handler, -450, 1725, 300, 10, "Wall"));
+
+		//Left Side
+		worldWalls.add(new Walls(handler, -750, 2375, 300, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -750, 2375, 10, 1050, "Wall"));
+
+		//Bottom Left Side	
+		worldWalls.add(new Walls(handler, -1020, 3415, 270, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -1040, 3415, 10, 250, "Wall"));
+		worldWalls.add(new Walls(handler, -1040, 3665, 355, 10, "Wall"));
+
+		//Bridge to small island walls
+		worldWalls.add(new Walls(handler, -695, 3665, 10, 800, "Wall"));
+		worldWalls.add(new Walls(handler, -595, 3665, 10, 800, "Wall"));
+
+		//Bottom Side
+		worldWalls.add(new Walls(handler, -595, 3665, 150, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -445, 3665, 10, 395, "Wall"));
+		worldWalls.add(new Walls(handler, -445, 4050, 220, 10, "Wall"));
+
+		//Bottom Right Side
+		worldWalls.add(new Walls(handler, 675, 2430, 10, 200, "Wall"));
+		worldWalls.add(new Walls(handler, 475, 2630, 200, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 475, 2630, 10, 400, "Wall"));
+		worldWalls.add(new Walls(handler, 75, 3030, 395, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 75, 3030, 10, 385, "Wall"));
+		worldWalls.add(new Walls(handler, -235, 3415, 320, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -235, 3415, 10, 645, "Wall"));
 	}
 
 	public void collidedWithWall() {
 		if(this.handler.getEntityManager().getPlayer().getCollision().intersects(this.rectangle)) {
-		if(!handler.getGame().getMusicHandler().getEPlayer().isEmpty()&&!handler.getGame().getMusicHandler().getEffect(0).equals(null)) {
-		handler.getGame().getMusicHandler().stopEffect(0);}    	
-		handler.getGame().getMusicHandler().playEffect("res/music/SSAcquired.wav",1);
-		handler.getEntityManager().getPlayer().setWeaken(true);
+			if(!handler.getGame().getMusicHandler().getEPlayer().isEmpty()&&!handler.getGame().getMusicHandler().getEffect(0).equals(null)) {
+				handler.getGame().getMusicHandler().stopEffect(0);}    	
+			handler.getGame().getMusicHandler().playEffect("res/music/SSAcquired.wav",1);
+			handler.getEntityManager().getPlayer().setWeaken(true);
 		}
 	}
 	public void moveString() {
