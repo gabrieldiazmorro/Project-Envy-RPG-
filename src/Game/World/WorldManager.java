@@ -1,6 +1,7 @@
 package Game.World;
 
 import Game.Entities.EntityManager;
+import Game.Entities.Statics.OverTownImg;
 import Game.Entities.Statics.SmokeHouse;
 import Game.Entities.Statics.Tree;
 import Input.MouseManager.Circle;
@@ -36,6 +37,7 @@ public class WorldManager {
 		circle = handler.getGame().getMouseManager().new Circle(5627,380, this.handler);
 		this.entityManager.AddEntity(new Tree(handler, 600, 600));
 		this.entityManager.AddEntity(new SmokeHouse(handler, 1153, 335));
+		this.entityManager.AddEntity(new OverTownImg(handler, 2420, -880));
 
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Jovan","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,1400, 600,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
@@ -111,8 +113,9 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 2400, 50, 10, 400, "Wall"));
 		////Top right of the Island
 		worldWalls.add(new Walls(handler, 2420, 40, 600, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 2420, -380, 600, 10, "Door Town"));
 		worldWalls.add(new Walls(handler, 3000, -400, 10, 450, "Wall"));
-		worldWalls.add(new Walls(handler, 1365, -380, 1650, 10, "Wall"));
+		worldWalls.add(new Walls(handler, 1365, -380, 1050, 10, "Wall"));
 		///Top of the Island
 		worldWalls.add(new Walls(handler,1365,-390,10,260,"Wall"));
 		worldWalls.add(new Walls(handler, 670, -130, 700, 10, "Wall"));

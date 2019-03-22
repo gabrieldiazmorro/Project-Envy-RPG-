@@ -9,6 +9,7 @@ import Game.GameStates.State;
 import Game.World.Walls;
 import Game.World.InWorldAreas.CaveArea;
 import Game.World.InWorldAreas.InWorldWalls;
+import Game.World.InWorldAreas.TownArea;
 import Main.GameSetUp;
 import Main.Handler;
 import Resources.Animation;
@@ -214,7 +215,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 							setWidthAndHeight(InAreaWidthFrontAndBack, InAreaHeightFront);
 							handler.setXInWorldDisplacement(CaveArea.playerXSpawn);
 							handler.setYInWorldDisplacement(CaveArea.playerYSpawn);
-							GameSetUp.LOADING = true;
+							GameSetUp.LOADING = false;
 							handler.setArea("Cave");
 							
 	                        handler.getGame().getMusicHandler().set_changeMusic("res/music/Cave.mp3");
@@ -222,6 +223,23 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	                        handler.getGame().getMusicHandler().setVolume(0.4);
 							
 							State.setState(handler.getGame().inWorldState.setArea(InWorldState.caveArea));
+						}
+						if (w.getType().equals("Door Town")) {
+							checkInWorld = true;
+							InWorldState.townArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
+							InWorldState.townArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
+							TownArea.isInTown = true;
+							setWidthAndHeight(InAreaWidthFrontAndBack, InAreaHeightFront);
+							handler.setXInWorldDisplacement(TownArea.playerXSpawn);
+							handler.setYInWorldDisplacement(TownArea.playerYSpawn);
+							GameSetUp.LOADING = true;
+							handler.setArea("Town");
+							
+	                        handler.getGame().getMusicHandler().set_changeMusic("res/music/SuperMarioTown.mp3");
+	                        handler.getGame().getMusicHandler().play();
+	                        handler.getGame().getMusicHandler().setVolume(0.4);
+							
+							State.setState(handler.getGame().inWorldState.setArea(InWorldState.townArea));
 						}
 
 						if (w.getType().equals("Door S")) {
@@ -260,7 +278,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 								handler.setYDisplacement(InWorldState.caveArea.oldPlayerYCoord);// outside theCave
 							}
 	
-							GameSetUp.LOADING = true;
+							GameSetUp.LOADING = false;
 							handler.setArea("None");
 							
 	                    	handler.getGame().getMusicHandler().set_changeMusic("res/music/OverWorld.mp3");
@@ -271,6 +289,41 @@ public class Player extends BaseDynamicEntity implements Fighter {
 							CaveArea.isInCave = false;
 							checkInWorld = false;
 							System.out.println("Left Cave");
+							setWidthAndHeight(InMapWidthFrontAndBack, InMapHeightFront);
+						}
+					}
+				}
+			}
+			else if (TownArea.isInTown) {
+				for (InWorldWalls iw : TownArea.townWalls) {
+					if (nextArea.intersects(iw)) {
+						if (iw.getType().equals("Wall"))
+							PushPlayerBack();
+						else {
+
+							if (iw.getType().equals("Start Exit")) {
+
+								handler.setXDisplacement(InWorldState.townArea.oldPlayerXCoord); // Sets the player x/y
+																							// outside the
+								handler.setYDisplacement(handler.getYDisplacement() - 50); // Town
+
+							} else if (iw.getType().equals("End Exit")) {
+
+								handler.setXDisplacement(InWorldState.townArea.oldPlayerXCoord);// Sets the player x/y
+								handler.setYDisplacement(InWorldState.townArea.oldPlayerYCoord+75);// outside theTown
+							}
+	
+							GameSetUp.LOADING = false;
+							handler.setArea("None");
+							
+	                    	handler.getGame().getMusicHandler().set_changeMusic("res/music/OverWorld.mp3");
+	                        handler.getGame().getMusicHandler().play();
+	                        handler.getGame().getMusicHandler().setVolume(0.2);
+							
+							State.setState(handler.getGame().mapState);
+							TownArea.isInTown = false;
+							checkInWorld = false;
+							System.out.println("Left Town");
 							setWidthAndHeight(InMapWidthFrontAndBack, InMapHeightFront);
 						}
 					}
