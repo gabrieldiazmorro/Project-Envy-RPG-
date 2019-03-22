@@ -88,9 +88,11 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			} else {
 				checkInWorld = false;
 			}
-			if(handler.getKeyManager().regenplayer) {
-				this.setMana(this.getMaxMana());
-				this.setHealth(this.getMaxHealth());
+			if(handler.getKeyManager().regenplayer) {  //resseeeeeeeeeeeeeeet this shat back to normalllllllllllllllllll
+//				this.setMana(this.getMaxMana());
+//				this.setHealth(this.getMaxHealth());
+				System.out.println("x: " + this.getXOffset());
+				System.out.println("y: " +this.getYOffset());
 				handler.getKeyManager().regenplayer =false;
 			}
 

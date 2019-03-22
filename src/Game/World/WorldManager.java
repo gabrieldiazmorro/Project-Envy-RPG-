@@ -103,7 +103,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 360, 950, 480, 10, "Wall" ));
 		worldWalls.add(new Walls(handler, 845, 950, 10, 250, "Wall"));
 		///Bottom of the Island
-		worldWalls.add(new Walls(handler, 850, 1200, 670, 5, "Wall"));
+		worldWalls.add(new Walls(handler, 850, 1200, 670, 5, "Door Town")); //Wall
 		///Bottom of the Island (right-ish)
 		worldWalls.add(new Walls(handler, 1500, 830, 10, 370, "Wall"));
 		worldWalls.add(new Walls(handler, 1500, 820, 500, 10, "Wall"));
