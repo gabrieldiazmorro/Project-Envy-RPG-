@@ -193,6 +193,27 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 75, 3030, 10, 385, "Wall"));
 		worldWalls.add(new Walls(handler, -235, 3415, 320, 10, "Wall"));
 		worldWalls.add(new Walls(handler, -235, 3415, 10, 645, "Wall"));
+		
+		//Small Mountains
+		worldWalls.add(new Walls(handler, -50, 1650, 195, 240, "Wall"));
+		worldWalls.add(new Walls(handler, -50, 1890, 95, 150, "Wall"));
+		worldWalls.add(new Walls(handler, 150, 1735, 100, 40, "Wall"));
+		worldWalls.add(new Walls(handler, -120, 1725, 70, 315, "Wall"));
+		worldWalls.add(new Walls(handler, -200, 1810, 80, 245, "Wall"));
+		worldWalls.add(new Walls(handler, -270, 1910, 70, 95, "Wall"));
+		worldWalls.add(new Walls(handler, -325, 1975, 55, 80, "Wall"));
+		
+		//Big Mountains
+		worldWalls.add(new Walls(handler, -275, 2275, 95, 625, "Wall"));
+		worldWalls.add(new Walls(handler, -375, 2300, 100, 75, "Wall"));
+		worldWalls.add(new Walls(handler, -425, 2375, 150, 600, "Wall"));
+		worldWalls.add(new Walls(handler, -180, 2335, 125, 625, "Wall"));
+		worldWalls.add(new Walls(handler, -55, 2525, 95, 285, "Wall"));
+		worldWalls.add(new Walls(handler, 40, 2590, 100, 108, "Wall"));
+		worldWalls.add(new Walls(handler, -475, 2450, 50, 350, "Wall"));
+		worldWalls.add(new Walls(handler, -525, 2525, 50, 275, "Wall"));
+		worldWalls.add(new Walls(handler, -630, 2650, 105, 110, "Wall"));
+		worldWalls.add(new Walls(handler, -585, 2565, 60, 85, "Wall"));
 	}
 
 	public void collidedWithWall() {
