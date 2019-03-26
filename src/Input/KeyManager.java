@@ -35,6 +35,7 @@ public class KeyManager implements KeyListener {
 	public boolean runbutt=false;
 	public boolean debugkey = false;
 	public boolean regenplayer = false;
+	public boolean ekey = false;
 
 
 	public KeyManager(){
@@ -70,6 +71,7 @@ public class KeyManager implements KeyListener {
 		runbutt = keys[KeyEvent.VK_SHIFT];
 		debugkey = keys[KeyEvent.VK_F7];
 		regenplayer = keys[KeyEvent.VK_H];
+		ekey = keys[KeyEvent.VK_E];
 
 	}
 

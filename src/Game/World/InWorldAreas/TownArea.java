@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import Game.Entities.EntityManager;
+import Game.Entities.Dynamics.BigChungus;
 import Game.World.Walls;
 
 public class TownArea extends BaseArea {
@@ -14,6 +15,7 @@ public class TownArea extends BaseArea {
 	Rectangle exit;
 	Rectangle playerRect;
 	public static boolean isInTown = false;
+	private BigChungus bigChungus;
 
 	private int imageWidth = 5850, imageHeight = 4270;
 	public final static int playerXSpawn = -1380, playerYSpawn = -3180;
@@ -34,11 +36,9 @@ public class TownArea extends BaseArea {
 
 
 
-		//        this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,700, 2000,"InWorldState","Sergio","Town","EnemyOne",150,25,80,1,8,12,20,10,20,10,1,10,"None","Thunder",null,null)); //lvl 2 difficulty
-		//        this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,3000, 1000,"InWorldState","Cave Dweller","Town","EnemyOne",100,25,60,10,1,12,20,10,20,13,1,10,"None","Thunder",null,null)); // lvl 1 difficulty
-		//
-		//        this.entityManager.AddEntity(new LightStatue (handler, 2080, 1770));
-		//        
+		//this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,700, 2000,"InWorldState","Sergio","Town","BigChungus",150,25,80,1,8,12,20,10,20,10,1,10,"None","Thunder",null,null)); //lvl 2 difficulty
+		//this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,3000, 1000,"InWorldState","Cave Dweller","Town","EnemyOne",100,25,60,10,1,12,20,10,20,13,1,10,"None","Thunder",null,null)); // lvl 1 difficulty
+		this.entityManager.AddEntity(new BigChungus(handler, 1000,1000, Images.bigChungus));
 		townWalls = new ArrayList<>();
 		AddWalls();
 	}

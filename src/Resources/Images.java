@@ -39,9 +39,12 @@ public class Images {
 	public static BufferedImage projectTitle;
 	public static BufferedImage envyTitle;
 	public static BufferedImage ghost;
+	
+	public static BufferedImage[] bigChungus; 
 
 
 	public static SpriteSheet playerSheet;
+	public static SpriteSheet chungusSheet;
 	public static BufferedImage[] player_front;
 	public static BufferedImage[] player_left;
 	public static BufferedImage[] player_right;
@@ -98,6 +101,8 @@ public class Images {
 	public static BufferedImage tree;
 
 	public Images() {
+		
+		bigChungus= new BufferedImage[2];
 
 		butstart = new BufferedImage[3];
 		BTitle = new BufferedImage[3];
@@ -149,6 +154,7 @@ public class Images {
 			smokeHouseSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/House.png")));
 			statueSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/statueSheet.png")));
 
+			chungusSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/chungusSprites.png")));
 			iceSkillSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/iceSkill.png")));
 			fireSkillSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/fireSkill.png")));
 			defenceModeSheet=  new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/defenceMode.png")));
@@ -159,6 +165,9 @@ public class Images {
 
 			projectTitle = ImageIO.read(getClass().getResourceAsStream("/Buttons/ProjectWord.png"));
 			ghost = ImageIO.read(getClass().getResourceAsStream("/Sheets/ghost.png"));
+			
+			bigChungus[0] = chungusSheet.crop(349, 7, 149, 221);
+			bigChungus[1] = chungusSheet.crop(14, 14, 156, 213);
 
 
 			CaveMap = ImageIO.read(getClass().getResourceAsStream("/Worlds/CaveMap.png"));
