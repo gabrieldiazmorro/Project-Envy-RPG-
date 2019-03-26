@@ -202,13 +202,13 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, -235, 3415, 10, 645, "Wall"));
 		
 		//Small Mountains
+		worldWalls.add(new Walls(handler, -325, 1975, 55, 80, "Wall"));
 		worldWalls.add(new Walls(handler, -50, 1650, 195, 240, "Wall"));
 		worldWalls.add(new Walls(handler, -50, 1890, 95, 150, "Wall"));
 		worldWalls.add(new Walls(handler, 150, 1735, 100, 40, "Wall"));
 		worldWalls.add(new Walls(handler, -120, 1725, 70, 315, "Wall"));
 		worldWalls.add(new Walls(handler, -200, 1810, 80, 245, "Wall"));
 		worldWalls.add(new Walls(handler, -270, 1910, 70, 95, "Wall"));
-		worldWalls.add(new Walls(handler, -325, 1975, 55, 80, "Wall"));
 		
 		//Big Mountains
 		worldWalls.add(new Walls(handler, -275, 2275, 95, 625, "Wall"));
