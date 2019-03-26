@@ -43,8 +43,4 @@ public class LightStatue extends BaseStaticEntity {
 	public Rectangle getCollision() {
 		return collision;
 	}
-
-
-
-
 }
