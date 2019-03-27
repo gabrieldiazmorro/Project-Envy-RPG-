@@ -8,6 +8,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import Game.Entities.EntityManager;
+import Game.Entities.Dynamics.BigChungus;
 import Game.Entities.Statics.CuckBlock;
 import Game.Entities.Statics.OverTownImg;
 import Game.Entities.Statics.SmokeHouse;
@@ -47,7 +48,10 @@ public class WorldManager {
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Jovan","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,1400, 600,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2400, -200,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
+		
 		this.entityManager.AddEntity(new CuckBlock(handler, 1660, 60));
+	
+				
 		this.entityManager.AddEntity(circle);
 
 		AddWalls();
@@ -108,7 +112,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 360, 950, 480, 10, "Wall" ));
 		worldWalls.add(new Walls(handler, 845, 950, 10, 250, "Wall"));
 		///Bottom of the Island
-		worldWalls.add(new Walls(handler, 850, 1200, 670, 5, "Door Town")); //Wall
+		worldWalls.add(new Walls(handler, 850, 1200, 670, 5, "Wall")); //Wall
 		///Bottom of the Island (right-ish)
 		worldWalls.add(new Walls(handler, 1500, 830, 10, 370, "Wall"));
 		worldWalls.add(new Walls(handler, 1500, 820, 500, 10, "Wall"));
@@ -142,7 +146,11 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 1960, -150, 120, 100, "Wall"));
 
 		worldWalls.add(new Walls(handler, 1662, 55, 50, 50, "Door Cave"));
-		worldWalls.add(new Walls(handler, 1655, 70, 65, 65, "Wall"));       // Cave Door Entity
+		if(BigChungus.recievedSkill == false) {
+			worldWalls.add(new Walls(handler, 1655, 70, 65, 65 , "Cave Blocker"));       // Cave Door Entity
+		}
+		
+		
 		worldWalls.add(new Walls(handler, (int) circle.getXOffset(),(int) 
 				circle.getYOffset(), 20, 20, "Door S"));	
 

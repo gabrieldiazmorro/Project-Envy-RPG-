@@ -18,8 +18,8 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
 
     public EnemyOne(Handler handler, int xPosition, int yPosition, String state, String name, String area, BufferedImage[] animFrames) {
         super(handler, yPosition, yPosition,state,name,area,animFrames);
-        width = 30;
-        height = 30;
+        width = 30 +15;
+        height = 30+40;
         speed = 1;
         type="EnemyOne";
         this.setXOffset(xPosition);
@@ -56,7 +56,7 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
 
             g2.setColor(Color.black);
 
-            g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
+            g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);   //changed picture to sans from UnderTale
 
             if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision())) {
                 handler.getEntityManager().getPlayer().facing = "Left";

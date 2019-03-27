@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import Game.GameStates.FightState;
 import Game.GameStates.InWorldState;
 import Game.GameStates.State;
 import Game.World.Walls;
@@ -21,6 +22,8 @@ import java.awt.image.BufferedImage;
 import com.sun.net.ssl.KeyManager;
 
 public class Player extends BaseDynamicEntity implements Fighter {
+	
+	public static boolean QuestCompleted;
 
 	private Rectangle player;
 	private boolean canMove;
@@ -77,6 +80,10 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			if (GameSetUp.SWITCHING) {
 				switchingCoolDown++;
 			}
+			if(FightState.QuestCount>=2) {    //if player has defeated two or more enemies, the quest is complete
+				Player.QuestCompleted =true;
+				
+			}
 			if (switchingCoolDown >= 30) {
 				GameSetUp.SWITCHING = false;
 				switchingCoolDown = 0;
@@ -88,11 +95,11 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			} else {
 				checkInWorld = false;
 			}
-			if(handler.getKeyManager().regenplayer) {  //resseeeeeeeeeeeeeeet this shat back to normalllllllllllllllllll
-//				this.setMana(this.getMaxMana());
-//				this.setHealth(this.getMaxHealth());
-				System.out.println("x: " + this.getXOffset());
-				System.out.println("y: " +this.getYOffset());
+			if(handler.getKeyManager().regenplayer) {  
+				this.setMana(this.getMaxMana());
+				this.setHealth(this.getMaxHealth());
+//				System.out.println("x: " + this.getXOffset());
+//				System.out.println("y: " +this.getYOffset());
 				handler.getKeyManager().regenplayer =false;
 			}
 
@@ -204,6 +211,9 @@ public class Player extends BaseDynamicEntity implements Fighter {
 
 					if (w.getType().equals("Wall")) {
 						PushPlayerBack();
+					}
+					else if(w.getType().startsWith("Cave Blocker") && BigChungus.recievedSkill == false) {  
+						PushPlayerBack();    //pushes player back from cave entrance, if quest not completed
 					}
 
 					else if (w.getType().startsWith("Door")) {

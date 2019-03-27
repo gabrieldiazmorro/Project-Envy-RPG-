@@ -1,6 +1,7 @@
 package Game.GameStates;
 
 import Game.Entities.Dynamics.BaseHostileEntity;
+import Game.Entities.Dynamics.BigChungus;
 import Main.GameSetUp;
 import Main.Handler;
 
@@ -24,6 +25,8 @@ public class FightState extends InWorldState{
 
     BaseHostileEntity enemy;
     Rectangle enemyRect, playerRect;
+    
+    public static int QuestCount = 0;
 
     public int fightWordXPos = handler.getWidth()/2 - 250;
     public int fightWordYPos = 0 - 80;
@@ -138,6 +141,10 @@ public class FightState extends InWorldState{
         else {
             if(!attacking&&!defense&&!skill&&turn>0&&enemy.getHealth()<=0&&!battleOver){
                 battleOver=true;
+                if(BigChungus.talkedTONPC ==true) {
+                	FightState.QuestCount++;    // When player kills the enemy 1 is added to the quest progress counter
+                	System.out.println(QuestCount);
+                }
                 
                 handler.getGame().getMusicHandler().stop();
                 handler.getGame().getMusicHandler().playEffect("res/music/victory.mp3",0);
