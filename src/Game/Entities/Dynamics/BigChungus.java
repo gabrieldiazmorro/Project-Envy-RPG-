@@ -77,12 +77,12 @@ public class BigChungus extends BaseDynamicEntity{
             if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == false && Player.QuestCompleted == true) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
-                g.drawString("Press & hold E to recieve award!", handler.getXInWorldDisplacement() + 915, handler.getYInWorldDisplacement()+ 460);
+                g.drawString("Press & hold E to recieve your award!", handler.getXInWorldDisplacement() + 915, handler.getYInWorldDisplacement()+ 460);
             }
             if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == true && Player.QuestCompleted == true) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
-                g.drawString("Congratulations you are now ready!", handler.getXInWorldDisplacement() + 870, handler.getYInWorldDisplacement()+ 460);
+                g.drawString("Congratulations you are now ready to enter the cave!", handler.getXInWorldDisplacement() + 870, handler.getYInWorldDisplacement()+ 460);
                 handler.getEntityManager().getPlayer().skill = "Ice";     //if player has completed quest and talks to BigChungus the player receives a skill
                 BigChungus.recievedSkill =true;     //boolean to confirm that player has completed the quest and talked to chungus
                 
