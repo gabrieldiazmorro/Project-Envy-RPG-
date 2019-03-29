@@ -43,7 +43,6 @@ public class WorldManager {
 		rectangle = new Rectangle();
 		circle = handler.getGame().getMouseManager().new Circle(5627,380, this.handler);
 		this.entityManager.AddEntity(new Tree(handler, 600, 600));
-		this.entityManager.AddEntity(new SmokeHouse(handler, 1153, 335));
 		this.entityManager.AddEntity(new OverTownImg(handler, 2420, -880));
 
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Jovan","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
@@ -208,7 +207,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, -745, 4750, 200, 10, "Wall"));
 		worldWalls.add(new Walls(handler, -745, 4750, 10, 330, "Wall"));
 		worldWalls.add(new Walls(handler, -550, 4465, 10, 300, "Wall"));
-		worldWalls.add(new Walls(handler, -1050, 4875, 100, 100, "Door S"));  //house
+		worldWalls.add(new Walls(handler, -1300, 4600, 550, 500, "Door S"));  //castle
 		
 		//Bottom Side
 		worldWalls.add(new Walls(handler, -595, 3665, 150, 10, "Wall"));
