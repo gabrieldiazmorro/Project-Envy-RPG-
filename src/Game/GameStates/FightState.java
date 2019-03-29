@@ -526,7 +526,7 @@ public class FightState extends InWorldState{
     //Sets the background according to the previous state
     private void backgroundSelect(String prev) {
 
-        if(prev.equals("None") || prev.equals("Town")) 
+        if(prev.equals("None") || prev.equals("Town"))
             background = Images.battleBackground[1];
         else if (prev.equals("Cave"))
             background = Images.battleBackground[3];

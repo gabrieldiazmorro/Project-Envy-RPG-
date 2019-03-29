@@ -17,7 +17,7 @@ import Resources.Animation;
 
 public class BigChungus extends BaseDynamicEntity{
 
-    Rectangle enemyOne;
+    Rectangle ChungusRec;
     int width, height;
     private Animation chungus;
     
@@ -36,7 +36,7 @@ public class BigChungus extends BaseDynamicEntity{
 
   
         animFrames = Images.bigChungus;
-        enemyOne = new Rectangle();
+        ChungusRec = new Rectangle();
         chungus = new Animation(200, Images.bigChungus);
     }
 
@@ -54,18 +54,18 @@ public class BigChungus extends BaseDynamicEntity{
         Graphics2D g2 = (Graphics2D) g;
 
         if (TownArea.isInTown) {
-        	enemyOne = new Rectangle((int) (handler.getXInWorldDisplacement() +850),
+        	ChungusRec = new Rectangle((int) (handler.getXInWorldDisplacement() +850),
         			(int) (handler.getYInWorldDisplacement() + 490), 400, 400);
 			 g.drawImage(chungus.getCurrentFrame(),(int) (handler.getXInWorldDisplacement() +930),
 	        			(int) (handler.getYInWorldDisplacement() + 470), 180, 240, null);
 		}
 
-            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == false && Player.QuestCompleted == false) {
+            if (ChungusRec.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == false && Player.QuestCompleted == false) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
                 g.drawString("Press & hold E to talk.", handler.getXInWorldDisplacement() + 915, handler.getYInWorldDisplacement()+ 460);
             }
-            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == true && Player.QuestCompleted == false) {
+            if (ChungusRec.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == true && Player.QuestCompleted == false) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
                 g.drawString("Kill two enemies to recieve skill.", handler.getXInWorldDisplacement() + 870, handler.getYInWorldDisplacement()+ 460);
@@ -73,16 +73,15 @@ public class BigChungus extends BaseDynamicEntity{
             }
             
             
-            
-            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == false && Player.QuestCompleted == true) {
+            if (ChungusRec.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == false && Player.QuestCompleted == true) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
-                g.drawString("Press & hold E to recieve your award!", handler.getXInWorldDisplacement() + 915, handler.getYInWorldDisplacement()+ 460);
+                g.drawString("Press & hold E to recieve your award!", handler.getXInWorldDisplacement() + 820, handler.getYInWorldDisplacement()+ 460);
             }
-            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == true && Player.QuestCompleted == true) {
+            if (ChungusRec.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getKeyManager().ekey == true && Player.QuestCompleted == true) {
             	g.setFont(new Font("Times New Roman", Font.BOLD, 30));
             	g.setColor(Color.white);
-                g.drawString("Congratulations you are now ready to enter the cave!", handler.getXInWorldDisplacement() + 870, handler.getYInWorldDisplacement()+ 460);
+                g.drawString("Congratulations you are now ready to enter the cave!", handler.getXInWorldDisplacement() + 720, handler.getYInWorldDisplacement()+ 460);
                 handler.getEntityManager().getPlayer().skill = "Ice";     //if player has completed quest and talks to BigChungus the player receives a skill
                 BigChungus.recievedSkill =true;     //boolean to confirm that player has completed the quest and talked to chungus
                 
@@ -95,14 +94,14 @@ public class BigChungus extends BaseDynamicEntity{
     			(int) (handler.getYInWorldDisplacement() + 490), 400, 400);
             	}
 			}
-//        }
+
 
 
     }
 
     @Override
     public Rectangle getCollision() {
-        return enemyOne;
+        return ChungusRec;
     }
 
 	public int getWidth() {

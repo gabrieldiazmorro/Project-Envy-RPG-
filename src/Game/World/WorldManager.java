@@ -49,6 +49,10 @@ public class WorldManager {
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Jovan","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,1400, 600,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2400, -200,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
+        //second island enemies in order of appearance
+		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,300,1900,"MapState","Gabriel","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
+		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,100,2900,"MapState","Bienvenido","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
+		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,-600,3500,"MapState","Lagos","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
 		
 		this.entityManager.AddEntity(new CuckBlock(handler, 1660, 60));
 		this.entityManager.AddEntity(new Boat(handler, -100, 400)); // Boat 1
@@ -209,6 +213,8 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, -745, 4750, 10, 330, "Wall"));
 		worldWalls.add(new Walls(handler, -550, 4465, 10, 300, "Wall"));
 		worldWalls.add(new Walls(handler, -1050, 4875, 100, 100, "Door S"));  //house
+		
+
 		
 		//Bottom Side
 		worldWalls.add(new Walls(handler, -595, 3665, 150, 10, "Wall"));
