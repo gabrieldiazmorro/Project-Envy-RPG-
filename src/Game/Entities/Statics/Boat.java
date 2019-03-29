@@ -20,17 +20,15 @@ public class Boat extends BaseStaticEntity {
 		this.setXOffset(xPosition);
 		this.setYOffset(yPosition);
 
-		
 		collision = new Rectangle();
 	}
 	
 	
 	@Override
 	public void render(Graphics g) {
-		if(BigChungus.recievedSkill == false) {   //while the quest is not completed it will draw the image
 		g.drawImage(Images.boat, (int)(handler.getXDisplacement() + xPosition),(int)( handler.getYDisplacement() + yPosition), width, height, null);
 		collision = new Rectangle((int)(handler.getXDisplacement() + xPosition + 35), (int)(handler.getYDisplacement() + yPosition + 50), width/4, height/2);
-		}
+		
 	}
 	
 	@Override

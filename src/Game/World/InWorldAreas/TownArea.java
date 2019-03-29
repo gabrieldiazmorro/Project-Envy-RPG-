@@ -33,7 +33,6 @@ public class TownArea extends BaseArea {
 		playerRect = new Rectangle((int) handler.getWidth() / 2 - 5, (int) (handler.getHeight() / 2) + 300, 70, 70);
 
 		this.entityManager = entityManager;
-
 		this.entityManager.AddEntity(new BigChungus(handler, 1000,1000, Images.bigChungus));
 		townWalls = new ArrayList<>();
 		AddWalls();
@@ -99,7 +98,7 @@ public class TownArea extends BaseArea {
 		townWalls.add(new InWorldWalls(handler, 4218, 3076, 675, 735, "Wall"));				//house low right				
 
 		townWalls.add(new InWorldWalls(handler, 4245, 2150, 615, 500, "Wall"));		//pokemart							
-		//        townWalls.add(new InWorldWalls(handler, 2950, 340, 320, 100, "End Exit"));							// Exit at Start
+		
 		townWalls.add(new InWorldWalls(handler, 1230+1050, 3900, 280, 100, "Start Exit"));							// Exit at End
 
 

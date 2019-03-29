@@ -143,7 +143,6 @@ public class FightState extends InWorldState{
                 battleOver=true;
                 if(BigChungus.talkedTONPC ==true) {
                 	FightState.QuestCount++;    // When player kills the enemy 1 is added to the quest progress counter
-                	System.out.println(QuestCount);
                 }
                 
                 handler.getGame().getMusicHandler().stop();

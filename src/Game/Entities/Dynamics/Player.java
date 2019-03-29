@@ -98,8 +98,6 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			if(handler.getKeyManager().regenplayer) {  
 				this.setMana(this.getMaxMana());
 				this.setHealth(this.getMaxHealth());
-//				System.out.println("x: " + this.getXOffset());
-//				System.out.println("y: " +this.getYOffset());
 				handler.getKeyManager().regenplayer =false;
 			}
 
@@ -220,14 +218,12 @@ public class Player extends BaseDynamicEntity implements Fighter {
 						canMove = true;
 						
 						if (w.getType().equals("Door B1")) {
-//							checkInWorld = false;
 							handler.getEntityManager().getPlayer().facing = "Left";
 							handler.setXDisplacement(125);
 							handler.setYDisplacement(-1750);							
 	            
 						}
 						if (w.getType().equals("Door B2")) {
-//							checkInWorld = false;
 							handler.getEntityManager().getPlayer().facing = "Right";
 							handler.setXDisplacement(750);
 							handler.setYDisplacement(25);

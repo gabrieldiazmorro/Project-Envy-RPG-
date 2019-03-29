@@ -211,7 +211,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, -745, 4750, 200, 10, "Wall"));
 		worldWalls.add(new Walls(handler, -745, 4750, 10, 330, "Wall"));
 		worldWalls.add(new Walls(handler, -550, 4465, 10, 300, "Wall"));
-		worldWalls.add(new Walls(handler, -1300, 4600, 550, 500, "Door S"));  //castle
+		worldWalls.add(new Walls(handler, -1300, 4600, 550, 500, "Door S"));  // pewdiepie castle
 		
 
 		
