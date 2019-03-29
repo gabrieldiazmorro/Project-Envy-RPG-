@@ -28,7 +28,7 @@ public class CuckBlock extends BaseStaticEntity {
 	@Override
 	public void render(Graphics g) {
 		if(BigChungus.recievedSkill == false) {   //while the quest is not completed it will draw the image
-		g.drawImage(Images.Demonetized, (int)(handler.getXDisplacement() + xPosition),(int)( handler.getYDisplacement() + yPosition), width, height, null);
+		g.drawImage(Images.tidePod, (int)(handler.getXDisplacement() + xPosition),(int)( handler.getYDisplacement() + yPosition), width, height, null);
 		collision = new Rectangle((int)(handler.getXDisplacement() + xPosition + 35), (int)(handler.getYDisplacement() + yPosition + 50), width/4, height/2);
 		}
 	}

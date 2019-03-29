@@ -101,7 +101,7 @@ public class Images {
 	public static BufferedImage tree;
 	
 	//Our added Images
-	public static BufferedImage Demonetized;
+	public static BufferedImage tidePod;
 	public static BufferedImage boat;
 	
 	public Images() {
@@ -192,7 +192,7 @@ public class Images {
 			QST = ImageIO.read(getClass().getResourceAsStream("/Sheets/QST.png")); //Things sometimes just dont fit
 
 			// Our added Images
-			Demonetized = ImageIO.read(getClass().getResourceAsStream("/Sheets/demonetized.png")); // cave entrance static entity
+			tidePod = ImageIO.read(getClass().getResourceAsStream("/Sheets/tidepod.png")); // cave entrance static entity
 			boat = ImageIO.read(getClass().getResourceAsStream("/Sheets/boat.png"));
 			
 			Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
