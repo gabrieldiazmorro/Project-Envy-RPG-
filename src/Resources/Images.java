@@ -102,7 +102,8 @@ public class Images {
 	
 	//Our added Images
 	public static BufferedImage Demonetized;
-
+	public static BufferedImage boat;
+	
 	public Images() {
 		
 		bigChungus= new BufferedImage[2];
@@ -192,6 +193,7 @@ public class Images {
 
 			// Our added Images
 			Demonetized = ImageIO.read(getClass().getResourceAsStream("/Sheets/demonetized.png")); // cave entrance static entity
+			boat = ImageIO.read(getClass().getResourceAsStream("/Sheets/boat.png"));
 			
 			Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
 			Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeButton3.png"));

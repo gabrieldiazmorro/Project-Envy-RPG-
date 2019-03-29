@@ -13,6 +13,7 @@ import Game.Entities.Statics.CuckBlock;
 import Game.Entities.Statics.OverTownImg;
 import Game.Entities.Statics.SmokeHouse;
 import Game.Entities.Statics.Tree;
+import Game.Entities.Statics.Boat;
 import Input.MouseManager.Circle;
 import Main.GameSetUp;
 import Main.Handler;
@@ -50,7 +51,8 @@ public class WorldManager {
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2400, -200,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		
 		this.entityManager.AddEntity(new CuckBlock(handler, 1660, 60));
-	
+		this.entityManager.AddEntity(new Boat(handler, -100, 400)); // Boat 1
+		this.entityManager.AddEntity(new Boat(handler, 950, 2200)); // Boat 2
 				
 		this.entityManager.AddEntity(circle);
 
@@ -105,7 +107,8 @@ public class WorldManager {
 		//Bridge Walls
 		worldWalls.add(new Walls(handler, 150, 120, 210, 360, "Wall"));
 		worldWalls.add(new Walls(handler, 150, 600, 210, 495, "Wall"));
-		//		worldWalls.add(new Walls(handler, 0, 450, 150, 200, "Wall"));
+		worldWalls.add(new Walls(handler, 150, 120, 10, 720, "Wall"));
+		worldWalls.add(new Walls(handler, 10, 450, 150, 200, "Door B1"));
 
 		//Walls of the Island
 		///Left Bottom Border of the Island
@@ -165,7 +168,8 @@ public class WorldManager {
 		//Bride Walls
 		worldWalls.add(new Walls(handler, 675, 2300, 250, 10, "Wall"));
 		worldWalls.add(new Walls(handler, 675, 2430, 250, 10, "Wall"));
-//		worldWalls.add(new Walls(handler, 925, 2300, 10, 130, "Wall"));
+		worldWalls.add(new Walls(handler, 925, 2300, 10, 130, "Wall"));
+		worldWalls.add(new Walls(handler, 915, 2300, 10, 130, "Door B2"));
 
 		//Top Right Side
 		worldWalls.add(new Walls(handler, 160, 1725, 200, 10, "Wall"));
@@ -194,7 +198,18 @@ public class WorldManager {
 		//Bridge to small island walls
 		worldWalls.add(new Walls(handler, -695, 3665, 10, 800, "Wall"));
 		worldWalls.add(new Walls(handler, -595, 3665, 10, 800, "Wall"));
-
+		
+		//Small Island with lonely hut 
+		worldWalls.add(new Walls(handler, -935, 4465, 240, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -945, 4475, 10, 225, "Wall"));
+		worldWalls.add(new Walls(handler, -1245, 4700, 300, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -1245, 4700, 10, 385, "Wall"));
+		worldWalls.add(new Walls(handler, -1245, 5085, 500, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -745, 4750, 200, 10, "Wall"));
+		worldWalls.add(new Walls(handler, -745, 4750, 10, 330, "Wall"));
+		worldWalls.add(new Walls(handler, -550, 4465, 10, 300, "Wall"));
+		worldWalls.add(new Walls(handler, -1050, 4875, 100, 100, "Door S"));  //house
+		
 		//Bottom Side
 		worldWalls.add(new Walls(handler, -595, 3665, 150, 10, "Wall"));
 		worldWalls.add(new Walls(handler, -445, 3665, 10, 395, "Wall"));
@@ -216,10 +231,10 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 150, 1735, 100, 40, "Wall"));
 		worldWalls.add(new Walls(handler, -120, 1725, 70, 315, "Wall"));
 		worldWalls.add(new Walls(handler, -200, 1810, 80, 245, "Wall"));
-		worldWalls.add(new Walls(handler, -270, 1910, 70, 95, "Wall"));
+		worldWalls.add(new Walls(handler, -270, 1910, 70, 150, "Wall"));
 		
 		//Big Mountains
-		worldWalls.add(new Walls(handler, -275, 2275, 95, 625, "Wall"));
+		worldWalls.add(new Walls(handler, -275, 2275, 95, 700, "Wall"));
 		worldWalls.add(new Walls(handler, -375, 2300, 100, 75, "Wall"));
 		worldWalls.add(new Walls(handler, -425, 2375, 150, 600, "Wall"));
 		worldWalls.add(new Walls(handler, -180, 2335, 125, 625, "Wall"));

@@ -218,6 +218,22 @@ public class Player extends BaseDynamicEntity implements Fighter {
 
 					else if (w.getType().startsWith("Door")) {
 						canMove = true;
+						
+						if (w.getType().equals("Door B1")) {
+//							checkInWorld = false;
+							handler.getEntityManager().getPlayer().facing = "Left";
+							handler.setXDisplacement(125);
+							handler.setYDisplacement(-1750);							
+	            
+						}
+						if (w.getType().equals("Door B2")) {
+//							checkInWorld = false;
+							handler.getEntityManager().getPlayer().facing = "Right";
+							handler.setXDisplacement(750);
+							handler.setYDisplacement(25);
+						}
+
+
 
 						if (w.getType().equals("Door Cave")) {
 							checkInWorld = true;
